@@ -1,0 +1,13 @@
+[debug] > Exec(var x = "", None, None)
+[error] Expected ID character
+[error] Not a valid command: var (similar: eval)
+[error] Expected project ID
+[error] Expected configuration
+[error] Expected ':'
+[error] Expected key
+[error] Not a valid key: var (similar: envVars, run, target)
+[error] var x = ""
+[error]    ^
+[debug] > Exec(idea-shell, None, None)
+[debug] > Exec(, None, None)
+[debug] > Exec(idea-shell, None, None)
