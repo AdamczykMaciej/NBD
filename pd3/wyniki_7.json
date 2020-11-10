@@ -1,0 +1,16 @@
+MongoDB shell version v4.2.7
+connecting to: mongodb://127.0.0.1:27017/nbd?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("074ec5e7-9f2c-4f34-a42c-98a98789c547") }
+MongoDB server version: 4.2.7
+2020-11-10T21:16:53.624+0100 E  QUERY    [js] uncaught exception: TypeError: db.people.remove(...).toArray is not a function :
+@D:\\PJATK_Informatyka2\\magisterkie\\2 semestr\\NBD\\Repo\\pd3\\zapytanie_7.js:1:11
+2020-11-10T21:16:53.624+0100 F  -        [main] failed to load: D:\\PJATK_Informatyka2\\magisterkie\\2 semestr\\NBD\\Repo\\pd3\\zapytanie_7.js
+2020-11-10T21:16:53.624+0100 E  -        [main] exiting with code -3
+MongoDB shell version v4.2.7
+connecting to: mongodb://127.0.0.1:27017/nbd?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("78e59e91-486c-44a7-8006-d503267b5c75") }
+MongoDB server version: 4.2.7
+{ "nRemoved" : 0 }
+
+// usunęły się prawdopodobnie przy 1 zapytaniu, błędnym, próbowałem toArray() użyć. Potem poprawiłem i dobrze już zadziałało.
+// po zrobieniu db.people.find({"height":{$gt:190}}) nie zwraca żadnych rezultatów
