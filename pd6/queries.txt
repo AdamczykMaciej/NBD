@@ -1,0 +1,76 @@
+Note: I used *..5 in order to calculate the connections in a reasonable time
+1.)
+MATCH (n { name:"Darjeeling" }),(m { name:"Sandakphu" })
+WITH n,m
+MATCH path = ShortestPath((n)-[*..5]-(m))
+RETURN path
+2.)
+MATCH p = (n { name:"Darjeeling" })-[*]->(m { name:"Sandakphu" })
+WITH n,m
+MATCH path = ShortestPath((n)-[*..5]-(m))
+WHERE ALL(r in relationships(path) WHERE r.winter = "true")
+RETURN path
+3.)
+
+MATCH p = (n { name:"Darjeeling" })-[*..5]->(m { name:"Sandakphu" })
+WITH reduce(totalDistance = 0.0, n IN relationships(p)| totalDistance + toFloat(n.distance)) AS reduction, p
+ORDER BY reduction, p
+RETURN p
+
+MATCH p = (n { name:"Darjeeling" })-[*..5]->(m { name:"Sandakphu" })
+WHERE ALL(r in relationships(p) WHERE type(r) = "twowheeler")
+RETURN p
+
+The 2nd query returns 0 records.
+
+4.)
+
+MATCH (a:Airport)<-[:ORIGIN]-(b:Flight)
+RETURN a, count(b) AS countFlights
+ORDER BY countFlights
+
+5.)
+NOTE: Uproszczenie, ogrniczenie :Connection*..3 dla szybszych obliczeń.  Bardzo dużo czasu zajmuje policzenie wszystkiego.
+
+MATCH (startAirport:Airport)<-[:ORIGIN]-(flight:Flight)-[:DESTINATION]-(endAirport:Airport), (flight)<-[:ASSIGN]-(ticket)
+CREATE (startAirport)-[:CONNECTION {price: ticket.price}]->(endAirport)
+
+MATCH path = ((startAirport:Airport {name: "LAX"})-[:CONNECTION*..3]->(airport:Airport))
+WITH path, airport, REDUCE(totalPrice = 0, airport IN relationships(path)|totalPrice + airport.price) AS totalPrice
+WHERE  totalPrice < 3000
+RETURN DISTINCT airport
+
+
+
+6.)
+MATCH path = (a:Airport {name:"LAX"})-[:CONNECTION*..3]-(b:Airport {name:"DAY"})
+WITH REDUCE(totalPrice = 0, airport IN relationships(path)|totalPrice + airport.price) AS totalPrice, path
+ORDER BY totalPrice
+RETURN path
+
+7.)
+MATCH path = (a:Airport {name:"LAX"})-[:CONNECTION*..3]-(b:Airport {name:"DAY"})
+WITH REDUCE(totalPrice = 0, connection IN relationships(path)|totalPrice + connection.price) AS totalPrice, path
+ORDER BY totalPrice ASC LIMIT 1
+RETURN path, totalPrice
+
+8.)
+MATCH path = (LAX:Airport {name: "LAX"})<-[:ORIGIN]-(:Flight)-[*..4]-(:Flight)-[:DESTINATION]->(DAY:Airport {name: "DAY"})
+RETURN path, reduce(
+    cost = 0, 
+    flight IN [n IN nodes(path) WHERE 'Flight' IN labels(n)] |
+    cost + [(flight)<-[:ASSIGN]-(ticket:Ticket {class: "business"}) | ticket.price][0]
+) as cost
+ORDER BY cost ASC LIMIT 1
+
+9.)
+MATCH path=(startAirport:Airport)<-[:ORIGIN]-(f:Flight)-[:DESTINATION]->(endAirport:Airport)
+    return startAirport, count(distinct endAirport)
+
+10.)
+MATCH path=(startAirport:Airport)-[:CONNECTION]-(middleAirport:Airport)-[:CONNECTION]->(endAirport:Airport)
+    WHERE (startAirport)<>(endAirport)
+    WITH REDUCE(totalPrice = 0, connection IN relationships(path)|totalPrice + connection.price) AS totalPrice, path
+    ORDER BY totalPrice ASC LIMIT 1
+    return path, totalPrice
+
