@@ -1,0 +1,37 @@
+1.)
+curl -XPOST -i -H "Content-Type:application/json" -d '{"name": "Maciej Adamczyk","nationality": "Poland", "date-of-birth": "1997-Nov-26"}' http://localhost:8098/buckets/s15170/keys/maciej
+
+curl -XPOST -i -H "Content-Type:application/json" -d '{"name": "Pawel Kowalski","nationality": "Poland", "date-of-birth": "1987-Oct-22"}' http://localhost:8098/buckets/s15170/keys/pawel
+
+curl -XPOST -i -H "Content-Type:application/json" -d '{"name": "Juanho Prats","nationality": "Spain", "date-of-birth": "1995-Nov-20"}' http://localhost:8098/buckets/s15170/keys/juanho
+
+curl -XPOST -i -H "Content-Type:application/json" -d '{"name": "Gerald Dominic","nationality": "India", "date-of-birth": "1992-May-12"}' http://localhost:8098/buckets/s15170/keys/gerald
+
+curl -XPOST -i -H "Content-Type:application/json" -d '{"name": "Julia Ballber","nationality": "Spain", "date-of-birth": "1999-Feb-20"}' http://localhost:8098/buckets/s15170/keys/julia
+
+2.)
+curl -i http://localhost:8098/buckets/s15170ys/maciej
+
+3.)
+curl -XPUT -i -H "Content-Type:application/json" -d '{"name": "Maciej Adamczyk","nationality": "Poland", "date-of-birth": "1990-Nov-26", "description": "my name is Maciej. I like football."}' http://localhost:8098/buckets/s15170/keys/maciej
+
+4.)
+curl -XPUT -i -H "Content-Type:application/json" -d '{"name": "Maciej Adamczyk","nationality": "Poland"}' http://localhost:8098/buckets/s15170/keys/maciej
+
+5.)
+curl -XPUT -i -H "Content-Type:application/json" -d '{"name": "Maciej Adamczyk","nationality": "Poland", "date-of-birth": "1990-Nov-26"}' http://localhost:8098/buckets/s15170/keys/maciej
+
+6.)
+curl -XDELETE -i http://localhost:8098/buckets/s15170/keys/juanho
+
+7.)
+curl http://localhost:8098/buckets/s15170/maciej2
+
+8.)
+curl -XPOST -i -H "Content-Type:application/json" -d '{"name": "Zawisza Czarny"}' http://localhost:8098/buckets/s15170/keys/
+
+9.)
+curl http://localhost:8098/buckets/s15170/keys/QEQSlS1FUJEZBB6JUrj04cj4bj6
+
+10.)
+curl -XDELETE -i http://localhost:8098/buckets/s15170/keys/QEQSlS1FUJEZBB6JUrj04cj4bj6
