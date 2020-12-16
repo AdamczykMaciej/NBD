@@ -1,0 +1,74 @@
+1 .)
+Headers:
+ {
+ "Server": "MochiWeb/1.1 WebMachine/1.10.8 (that head fake, tho)",
+ "Vary": "Accept-Encoding",
+ "Content-Type": "application/json",
+ "Content-Length": "0",
+ "Content-Encoding": "gzip",
+ "Date": "Wed, 16 Dec 2020 17:43:21 GMT"
+}
+2 .)
+Headers:
+ {
+ "Server": "MochiWeb/1.1 WebMachine/1.10.8 (that head fake, tho)",
+ "Last-Modified": "Wed, 16 Dec 2020 17:43:21 GMT",
+ "Content-Type": "application/json",
+ "X-Riak-Vclock": "a85hYGBgzGDKBVI8ypz/fsaEuygyMAqWZTAlMuaxMlge9rvJlwUA",
+ "Vary": "Accept-Encoding",
+ "ETag": "\"7BtoFqXjRrFp0HTGJK2rMF\"",
+ "Link": "</buckets/s15170>; rel=\"up\"",
+ "Content-Length": "82",
+ "Content-Encoding": "gzip",
+ "Date": "Wed, 16 Dec 2020 17:43:21 GMT"
+}
+Text:
+ nationality=Poland&name=Jan+Kowalski&date-of-birth=1992-Nov-09
+3 .)
+Headers:
+ {
+ "Server": "MochiWeb/1.1 WebMachine/1.10.8 (that head fake, tho)",
+ "Vary": "Accept-Encoding",
+ "Content-Type": "application/json",
+ "Content-Length": "0",
+ "Content-Encoding": "gzip",
+ "Date": "Wed, 16 Dec 2020 17:43:21 GMT"
+}
+4 .)
+Headers:
+ {
+ "Server": "MochiWeb/1.1 WebMachine/1.10.8 (that head fake, tho)",
+ "Last-Modified": "Wed, 16 Dec 2020 17:43:21 GMT",
+ "Content-Type": "application/json",
+ "X-Riak-Vclock": "a85hYGBgzGDKBVI8ypz/fsaEuygyMAqWZTAlMuWxMlge9rvJlwUA",
+ "Vary": "Accept-Encoding",
+ "ETag": "\"3TBaYwSjhxe9fnop0Y7anH\"",
+ "Link": "</buckets/s15170>; rel=\"up\"",
+ "Content-Length": "81",
+ "Content-Encoding": "gzip",
+ "Date": "Wed, 16 Dec 2020 17:43:21 GMT"
+}
+Text:
+ nationality=Spain&name=Jan+Kowalski&date-of-birth=1992-Nov-09
+5 .)
+Headers:
+ {
+ "Server": "MochiWeb/1.1 WebMachine/1.10.8 (that head fake, tho)",
+ "Vary": "Accept-Encoding",
+ "Content-Type": "application/json",
+ "Content-Length": "0",
+ "Content-Encoding": "gzip",
+ "Date": "Wed, 16 Dec 2020 17:43:21 GMT"
+}
+6 .)
+Headers:
+ {
+ "Server": "MochiWeb/1.1 WebMachine/1.10.8 (that head fake, tho)",
+ "Content-Length": "10",
+ "Content-Type": "text/plain",
+ "Date": "Wed, 16 Dec 2020 17:43:21 GMT",
+ "X-Riak-Deleted": "true",
+ "X-Riak-Vclock": "a85hYGBgzGDKBVI8ypz/fsaEuygyMAqWZTAlMuexMlge9rvJlwUA"
+}
+Text:
+ not found
