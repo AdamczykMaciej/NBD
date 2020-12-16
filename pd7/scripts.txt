@@ -25,13 +25,13 @@ curl -XPUT -i -H "Content-Type:application/json" -d '{"name": "Maciej Adamczyk",
 curl -XDELETE -i http://localhost:8098/buckets/s15170/keys/juanho
 
 7.)
-curl http://localhost:8098/buckets/s15170/maciej2
+curl -i http://localhost:8098/buckets/s15170/maciej2
 
 8.)
 curl -XPOST -i -H "Content-Type:application/json" -d '{"name": "Zawisza Czarny"}' http://localhost:8098/buckets/s15170/keys/
 
 9.)
-curl http://localhost:8098/buckets/s15170/keys/QEQSlS1FUJEZBB6JUrj04cj4bj6
+curl -i http://localhost:8098/buckets/s15170/keys/QEQSlS1FUJEZBB6JUrj04cj4bj6
 
 10.)
 curl -XDELETE -i http://localhost:8098/buckets/s15170/keys/QEQSlS1FUJEZBB6JUrj04cj4bj6

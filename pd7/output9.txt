@@ -1,1 +1,12 @@
+HTTP/1.1 200 OK
+X-Riak-Vclock: a85hYGBgzGDKBVI8ypz/fsYkFp5mYHiVmMGUyJjHymAU4XeTLwsA
+Vary: Accept-Encoding
+Server: MochiWeb/1.1 WebMachine/1.10.8 (that head fake, tho)
+Link: </buckets/s15170>; rel="up"
+Last-Modified: Wed, 16 Dec 2020 10:06:42 GMT
+ETag: "7UBHytDcwJAQo3sqeiHlGG"
+Date: Wed, 16 Dec 2020 10:09:35 GMT
+Content-Type: application/json
+Content-Length: 26
+
 {"name": "Zawisza Czarny"}
